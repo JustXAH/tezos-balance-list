@@ -1,57 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import {styled} from '@mui/system';
+import {InputContainer} from "./components/InputContainer";
+import {ListContainer} from "./components/ListContainer";
+
+const Layout = styled('div')({
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100vw',
+    minWidth: '100vw',
+    height: '100vh',
+    minHeight: '100vh',
+    backgroundImage: 'radial-gradient(ellipse farthest-corner at center top, #9ab1c7 0%, #1a242f 100%)',
+});
+
+const Container = styled('div')({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    maxWidth: '700px',
+    minWidth: '350px',
+    height: '75%',
+    padding: '40px',
+    boxSizing: 'border-box',
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Layout>
+        <Container>
+            <InputContainer />
+            <ListContainer />
+        </Container>
+      {/*  <Counter />*/}
+    </Layout>
   );
 }
 
