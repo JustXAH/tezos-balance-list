@@ -1,6 +1,6 @@
 import { Sotez } from 'sotez';
 
-const tezos = new Sotez('https://mainnet-node.madfish.solutions');
+const tezos = new Sotez(process.env.REACT_APP_RPC_URL);
 
 export const getBalance = async (publicKeyHash: string) => {
     try {
